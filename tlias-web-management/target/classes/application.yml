@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: tlias-web-management
+  datasource:
+    url: jdbc:mysql://localhost:3306/tlias
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    hikari:
+      auto-commit: false
+  servlet: # <-- 注意这里的缩进，是2个空格
+    multipart: # <-- 这一行非常关键，相对于 'servlet' 必须是2个空格，相对于 'spring' 是4个空格
+      max-file-size: 10MB  # <-- 这一行相对于 'multipart' 必须是2个空格，相对于 'spring' 是6个空格
+      max-request-size: 10MB # <-- 这一行相对于 'multipart' 必须是2个空格，相对于 'spring' 是6个空格
+  # 正确的层级结构和属性名
+    elasticsearch:
+      uris: http://127.0.0.1:9200
+      # 如果需要，还可以配置连接超时等
+      # connection-timeout: 5s
+      # socket-timeout: 10s
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+
+logging:
+  level:
+    org.springframework.jdbc.support.JdbcTransactionManager: DEBUG
+    org.mybatis.spring.SqlSessionUtils: DEBUG
+    org.springframework.transaction: DEBUG
+    org.springframework.orm.mybatis: DEBUG
+    com.example: DEBUG
+
+#阿里云OSS配置
+aliyun :
+    oss:
+        endpoint: https://oss-cn-beijing.aliyuncs.com
+        backetName: java-ai-1968
+        region: cn-beijing
+
+

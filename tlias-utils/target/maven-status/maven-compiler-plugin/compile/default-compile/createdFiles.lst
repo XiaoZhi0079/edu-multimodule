@@ -1,0 +1,4 @@
+com\example\utils\CurrentHolder.class
+com\example\utils\JWT.class
+com\example\utils\AliyunOSSOperator.class
+com\example\utils\AliyunOSSProperties.class
