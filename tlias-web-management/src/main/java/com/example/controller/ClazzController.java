@@ -4,6 +4,8 @@ import com.example.pojo.Clazz;
 import com.example.pojo.ClazzQueryParam;
 import com.example.pojo.Result;
 import com.example.service.ClazzService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +15,14 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/clazzs")
+@Tag(name = "班级管理", description = "班级增删改查")
 public class ClazzController {
+
 
     @Autowired
     private ClazzService clazzService;
 
+    @Operation(summary = "分页查询", description = "忘记了")
     @GetMapping
     public Result Page(ClazzQueryParam clazzQueryParam) {
 //        log.info("分页查询{}", clazzQueryParam);

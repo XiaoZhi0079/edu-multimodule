@@ -3,6 +3,7 @@ package com.example.exception;
 
 import com.aliyun.oss.ServiceException;
 import com.example.pojo.Result;
+import io.swagger.v3.oas.annotations.Hidden;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.springframework.dao.DuplicateKeyException;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+//@Hidden
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHander {

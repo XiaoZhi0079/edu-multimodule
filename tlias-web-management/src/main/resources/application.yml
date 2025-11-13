@@ -41,3 +41,17 @@ aliyun :
         region: cn-beijing
 
 
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  group-configs:
+    - group: 测试
+      packages-to-scan:
+        - com.example.controller     # 这里改成你 tlias-web-management 下的 com 包名
+#knife4j:
+#  enable: true
+#  setting:
+#    language: zh_cn
